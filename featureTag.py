@@ -2,8 +2,8 @@ import csv
 import sys
 import re
 
-reload(sys)  
-sys.setdefaultencoding('utf8')
+#reload(sys)  
+#sys.setdefaultencoding('utf8')
 
 def getTag():
     data = []

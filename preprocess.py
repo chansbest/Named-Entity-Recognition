@@ -1,8 +1,10 @@
 import featureTag
 import featureVectors
+import os
+
 
 # Makking the data Tagged One
-# featureTag.getTag()
+#featureTag.getTag()
 
 # Getting numerical features for our ML algorithms
 def createNumFeatures():
@@ -10,3 +12,5 @@ def createNumFeatures():
 
 
 
+createNumFeatures()
+print('done')

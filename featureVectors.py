@@ -3,11 +3,12 @@ import numpy as np
 import csv
 import sys
 import math
+import os
 
 
 
-reload(sys)
-sys.setdefaultencoding('utf8')
+#reload(sys)
+#sys.setdefaultencoding('utf8')
 
 class SentenceGetter(object):
             
@@ -32,7 +33,9 @@ class SentenceGetter(object):
 
 
 def numericFeatures():
-    data = pd.read_csv("taggedData.csv", encoding="latin1")
+    
+    filePath = os.getcwd()+os.sep+'Twitterdata'+os.sep+'annotatedData.csv'
+    data = pd.read_csv(filePath, encoding="latin1")
 
     data = data.fillna(method="ffill")
 
@@ -40,7 +43,7 @@ def numericFeatures():
     words.append("ENDPAD")
     tags = list(set(data["Tag"].values))
 
-    print tags
+    print(tags)
 
 
 
@@ -127,7 +130,7 @@ def numericFeatures():
 
     with open('featureVector.csv', 'wb') as ofile:
     	writer = csv.DictWriter(ofile, csv_columns)
-    	writer.writeheader()
+    	#writer.writeheader()
     	for s in X:
     		for d in s:
     			# print d
